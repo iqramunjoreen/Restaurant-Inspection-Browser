@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- Activity name -->
+    <string name="app_name">Inspecteur de restaurant</string>
+    <string name="title_activity_restaurant_list">Liste des restaurants</string>
+    <string name="title_activity_maps">Carte</string>
+    <string name="title_activity_restaurant_details">Détails du restaurant</string>
+    <string name="title_activity_inspection_details">Détails de l\'inspection</string>
+
+    <!-- Welcome activity -->
+    <string name="checking_update">Vérification de la mise à jour…</string>
+    <string name="updated_alert_title">Alerte</string>
+    <string name="updated_alert_msg">Nouvelles données! Voulez-vous mettre à jour?</string>
+    <string name="updated_alert_ok">OK</string>
+    <string name="progress_dialog_msg">Chargement…</string>
+    <string name="dialog_cancel">Annuler</string>
+
+    <!-- Map activity -->
+    <string name="address_map_item">Adresse</string>
+
+    <!-- Restaurant list activity -->
+    <string name="restaurant_name">Nom</string>
+    <string name="hazard_low_text">Danger: faible</string>
+    <string name="hazard_moderate_text">Danger: modéré</string>
+    <string name="hazard_high_text">Danger: élevé</string>
+    <string name="hazard_no_text">Aucun danger</string>
+    <string name="last_inspection_issues">Problèmes lors de la dernière inspection: %d</string>
+    <string name="updated_date">Date de mise à jour: %s</string>
+    <string name="no_issues">Aucun problème</string>
+    <string name="days_ago">jours</string>
+
+    <!-- Restaurant details activity -->
+    <string name="list_of_inspections">Liste des inspections:</string>
+    <string name="critical_issues">Problèmes critiques: %d</string>
+    <string name="non_critical_issues">Problèmes non critiques: %d</string>
+    <string name="address">Adresse: %s , %s</string>
+    <string name="coordinate">Latitude: %f\nLongitude: %f</string>
+    <string name="issue_notation">Ce restaurant n\'a pas été inspecté</string>
+    <string name="inspection_date">Date d\'inspection: %s</string>
+
+    <!-- Inspection details activity -->
+    <string name="no_violation">Aucune violation</string>
+    <string name="date">Date: %s</string>
+    <string name="violation">Violation: %s</string>
+    <string name="inspection_type">"Type d'inspection: "</string>
+
+    <!-- Menu buttons -->
+    <string name="map">Carte</string>
+    <string name="restaurant_list">Liste des restaurants</string>
+
+    <!-- Month -->
+    <string name="january">Janvier</string>
+    <string name="february">Février</string>
+    <string name="march">Mars</string>
+    <string name="april">Avril</string>
+    <string name="may">Mai</string>
+    <string name="june">Juin</string>
+    <string name="july">Juillet</string>
+    <string name="august">août</string>
+    <string name="september">Septembre</string>
+    <string name="october">Octobre</string>
+    <string name="november">novembre</string>
+    <string name="december">Décembre</string>
+    <string name="favorite">Favoris</string>
+    <string name="unfavorite">Annuler</string>
+    <string name="search">chercher</string>
+    <string name="search_success">"Recherche réussie "</string>
+    <string name="no_result">Aucun résultat trouvé</string>
+    <string name="wrong_arguement">"Mauvais argument entré "</string>
+    <string name="error_toast_1">"ERREUR: le numéro saisi doit être> = 0. Veuillez saisir à nouveau. "</string>
+    <string name="error_toast_2">"ERREUR: numéro entré non valide. Veuillez entrer à nouveau. "</string>
+    <string name="search_successful">Recherche réussie!</string>
+    <string name="name">Nom:</string>
+    <string name="hazard">Danger:</string>
+    <string name="low">Faible</string>
+    <string name="moderate">Modérer</string>
+    <string name="high">élevé</string>
+    <string name="the_number_of_critical_violation_within_the_last_year">Le nombre de violations critiques au cours de la dernière année:</string>
+    <string name="cancel">Annuler</string>
+    <string name="searchBtn">chercher</string>
+    <string name="search_on_myfavourite">Rechercher sur myFavourite</string>
+    <string name="favourite_list">Liste des favoris</string>
+    <string name="know_it">Sachez le!</string>
+</resources>

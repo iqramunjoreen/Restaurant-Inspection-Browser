@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#28a1de</color>
+    <color name="colorPrimaryDark">#1099de</color>
+    <color name="colorAccent">#0678c9</color>
+
+    <color name="lowHazardColor">#4a914a</color>
+    <color name="moderateHazardColor">#d47006</color>
+    <color name="highHazardColor">#cf0c0c</color>
+    <color name="testColor">#ffffff</color>
+
+    <color name="criticalColor">#961e1e</color>
+    <color name="nonCriticalColor">#419eba</color>
+</resources>

@@ -1,0 +1,5 @@
+Roles for Iteration 1:
+    Scrum Master: Shahjiban Munjoreen
+    Repository Manager: Branko Bajcetic
+    Product Owner:  Chuwei Chen
+    Team Member: Li Liang

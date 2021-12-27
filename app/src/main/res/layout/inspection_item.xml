@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="8dp"
+    android:paddingVertical="8dp">
+
+    <ImageView
+        android:id="@+id/Hazard_image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="0dp"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/Hazard_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/Hazard_image"
+        android:layout_toRightOf="@+id/Hazard_image"
+        android:textStyle="bold|italic"
+        android:textSize="14sp"
+        tools:targetApi="o" />
+
+    <TextView
+        android:id="@+id/Critical_issue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Hazard_level"
+        android:layout_marginTop="0dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        tools:targetApi="o" />
+
+    <TextView
+        android:id="@+id/Non_critical_issue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Hazard_level"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="0dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        tools:targetApi="o" />
+
+    <TextView
+        android:id="@+id/Update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Non_critical_issue"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="14sp"
+        tools:targetApi="o" />
+
+
+</RelativeLayout>

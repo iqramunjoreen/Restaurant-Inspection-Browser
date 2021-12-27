@@ -1,0 +1,17 @@
+restaurant_store_icon_website： https://www.pngrepo.com/svg/234631/restaurant-store
+high_hazard_icon_website： https://commons.wikimedia.org/wiki/File:Button_Icon_Red.svg
+medium_hazard_icon_website： https://commons.wikimedia.org/wiki/File:Button_Icon_Yellow.svg
+low_hazard_icon_website： https://commons.wikimedia.org/wiki/File:Button_Icon_Green.svg
+
+employee_icon_website： https://www.freepik.com/free-icon/cooker_908163.htm
+food_icon_website： https://www.bdcoast.com/sale-products/
+pest_icon_website： https://svgsilh.com/image/24629.html
+equipment_icon_website： https://blcremodeling.com/projects/kitchen-icon/
+permit_icon_website： https://icon-library.com/icon/stamp-icon-10.html
+clean_icon_website： https://icon-library.com/icon/clean-icon-png-11.html
+certificate_icon_website： https://www.clipartmax.com/middle/m2H7i8m2b1i8G6d3_identity-verification-notice-comments-id-verification-icon-png/
+
+non_critical_icon_website： https://www.iconsdb.com/tropical-blue-icons/warning-28-icon.html
+critical_icon_website： https://www.flaticon.com/de/kostenloses-icon/ausrufezeichen_179386
+tab_list_icon： https://www.flaticon.com/free-icon/list_833301?term=list&amp;page=1&amp;position=2y
+tab_map_icon： https://www.flaticon.com/free-icon/place_711170?term=map&amp;page=1&amp;position=3

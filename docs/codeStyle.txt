@@ -1,0 +1,9 @@
+1. Add high level comments to all classes, describing the class
+
+2. Naming:
+    -Class names should start with uppercase
+    -Method and variable names should follow camel case, e.g. actionPerformed()
+
+3. Put all strings inside strings.xml
+
+4. Detailed commit messages on all commits

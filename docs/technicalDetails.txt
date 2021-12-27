@@ -1,0 +1,3 @@
+-Must run on Android API 24 (Android version 7.0) and newer
+-Must work on different screen sizes: 4", 6", 10"
+

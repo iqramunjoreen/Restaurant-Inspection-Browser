@@ -1,0 +1,375 @@
+Index: app/src/main/res/layout/inspection_item.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/inspection_item.xml	(date 1593652671571)
++++ app/src/main/res/layout/inspection_item.xml	(date 1593652671571)
+@@ -0,0 +1,67 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:orientation="vertical"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
++
++    <TextView
++        android:id="@+id/Update"
++        android:layout_width="215dp"
++        android:layout_height="wrap_content"
++        android:layout_alignParentLeft="true"
++        android:layout_alignParentTop="true"
++        android:layout_alignParentEnd="true"
++        android:layout_alignParentRight="true"
++        android:layout_marginStart="16dp"
++        android:layout_marginLeft="16dp"
++        android:layout_marginEnd="180dp"
++        android:layout_marginRight="180dp"
++        android:text="text"
++        android:textAppearance="?android:attr/textAppearanceMedium"
++        android:textSize="15sp" />
++
++    <ImageView
++        android:id="@+id/Hazard_image"
++        android:layout_width="26dp"
++        android:layout_height="28dp"
++        android:layout_below="@+id/Update"
++        android:layout_marginStart="16dp"
++        android:layout_marginLeft="16dp"
++        android:layout_marginTop="12dp" />
++
++    <TextView
++        android:id="@+id/Hazard_level"
++        android:layout_width="108dp"
++        android:layout_height="wrap_content"
++        android:layout_below="@+id/Update"
++        android:layout_marginStart="16dp"
++        android:layout_marginLeft="16dp"
++        android:layout_marginTop="16dp"
++        android:layout_toEndOf="@+id/Hazard_image"
++        android:layout_toRightOf="@+id/Hazard_image"
++        android:textSize="10sp" />
++
++    <TextView
++        android:id="@+id/Critical_issue"
++        android:layout_width="108dp"
++        android:layout_height="wrap_content"
++        android:layout_below="@+id/Hazard_level"
++        android:layout_marginStart="16dp"
++        android:layout_marginLeft="16dp"
++        android:layout_marginTop="16dp"
++        android:textSize="10sp" />
++
++    <TextView
++        android:id="@+id/Non_critical_issue"
++        android:layout_width="108dp"
++        android:layout_height="wrap_content"
++        android:layout_below="@+id/Hazard_level"
++        android:layout_marginStart="124dp"
++        android:layout_marginLeft="124dp"
++        android:layout_marginTop="16dp"
++        android:layout_toEndOf="@+id/Critical_issue"
++        android:layout_toRightOf="@+id/Critical_issue"
++        android:textSize="10sp" />
++
++
++</RelativeLayout>
+Index: app/src/main/java/com/sfu/cmpt276groupproject/InspectionActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/sfu/cmpt276groupproject/InspectionActivity.java	(date 1593650035372)
++++ app/src/main/java/com/sfu/cmpt276groupproject/InspectionActivity.java	(date 1593650035372)
+@@ -0,0 +1,22 @@
++package com.sfu.cmpt276groupproject;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.content.Context;
++import android.content.Intent;
++import android.os.Bundle;
++
++public class InspectionActivity extends AppCompatActivity {
++
++    private static final String INSPECTION_INDEX = "inspection index";
++
++    public static Intent makeIntentIntent(Context c, int InscepIdx){
++        Intent intent = new Intent(c, InspectionActivity.class);
++        intent.putExtra(INSPECTION_INDEX, InscepIdx);
++        return intent;
++    }
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision 5bcc3370c3669dcabc2108263c21fd67be89c108)
++++ app/src/main/AndroidManifest.xml	(date 1593643853716)
+@@ -9,7 +9,8 @@
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+         android:theme="@style/AppTheme">
+-        <activity android:name=".RestaurantDetailActivity"></activity>
++        <activity android:name=".InspectionActivity"></activity>
++        <activity android:name=".RestaurantDetailActivity" />
+         <activity
+             android:name=".RestaurantsListActivity"
+             android:label="@string/restaurants_list">
+Index: app/src/main/java/com/sfu/cmpt276groupproject/RestaurantDetailActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/sfu/cmpt276groupproject/RestaurantDetailActivity.java	(revision 5bcc3370c3669dcabc2108263c21fd67be89c108)
++++ app/src/main/java/com/sfu/cmpt276groupproject/RestaurantDetailActivity.java	(date 1593652571353)
+@@ -1,14 +1,150 @@
+ package com.sfu.cmpt276groupproject;
+ 
++import androidx.annotation.NonNull;
++import androidx.annotation.Nullable;
+ import androidx.appcompat.app.AppCompatActivity;
+ 
++import android.content.Context;
++import android.content.Intent;
++import android.graphics.Color;
+ import android.os.Bundle;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.AdapterView;
++import android.widget.ArrayAdapter;
++import android.widget.ImageView;
++import android.widget.ListView;
++import android.widget.TextView;
++
++import com.sfu.cmpt276groupproject.Model.DateCalculator;
++import com.sfu.cmpt276groupproject.Model.Hazard;
++import com.sfu.cmpt276groupproject.Model.Inspection;
++import com.sfu.cmpt276groupproject.Model.Restaurant;
++import com.sfu.cmpt276groupproject.Model.RestaurantManager;
++
++import java.text.ParseException;
++import java.util.List;
+ 
+ public class RestaurantDetailActivity extends AppCompatActivity {
++    RestaurantManager manager;
++    Restaurant ClickedRestaurant;
++    private static final String RESTAURANT_INDEX = "Restaurant index";
++
++    public static Intent makeRestaurantIntent(Context c, int RestIdx) {
++        Intent intent = new Intent(c, RestaurantDetailActivity.class);
++        intent.putExtra(RESTAURANT_INDEX, RestIdx);
++        return intent;
++    }
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_restaurant_detail);
++
++        Intent intent = this.getIntent();
++        int index = intent.getIntExtra(RESTAURANT_INDEX, -1);
++        manager = RestaurantManager.getInstance(this.getApplicationContext());
++        ClickedRestaurant = manager.getRestaurants().get(index);
++
++        SetupRestaurantInfo(ClickedRestaurant);
++        populateListView();
++        //Switch to Inspection Details
++        //registerClickCallbacks();
++
++    }
++
++    private void registerClickCallbacks() {
++        ListView list = findViewById(R.id.Inspection_List);
++        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
++            @Override
++            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
++                Intent intent = InspectionActivity.makeIntentIntent(RestaurantDetailActivity.this, position);
++                startActivity(intent);
++            }
++        });
++    }
++
++    private void populateListView() {
++        ArrayAdapter<Inspection> adapter = new ListAdapter();
++        ListView list = findViewById(R.id.Inspection_List);
++        list.setAdapter(adapter);
++    }
++
++    private void SetupRestaurantInfo(Restaurant clickedRestaurant) {
++        TextView RestaurantName = findViewById(R.id.Name);
++        TextView RestaurantAddress = findViewById(R.id.Address);
++        TextView RestaurantCoords = findViewById(R.id.Coords);
++
++        RestaurantName.setText("" + clickedRestaurant.getName());
++        RestaurantAddress.setText("Address: " + clickedRestaurant.getAddress() + " , " + clickedRestaurant.getCity());
++        RestaurantCoords.setText("Latitude: " + clickedRestaurant.getLatitude() + " , Longitude: " + clickedRestaurant.getLongitude());
++    }
++
++    private class ListAdapter extends ArrayAdapter<Inspection> {
++        public ListAdapter(){
++            super(RestaurantDetailActivity.this, R.layout.inspection_item, manager.getInspections(ClickedRestaurant));
++        }
++
++        @Override
++        public View getView(int position, View convertView, ViewGroup parent) {
++
++            View itemView = convertView;
++
++            if(convertView == null){
++                itemView = getLayoutInflater().inflate(R.layout.inspection_item, parent, false);
++            }
++
++            List<Inspection> InspectionList = manager.getInspections(ClickedRestaurant);
++
++            //For restaurant has inspections
++            if(InspectionList.size() != 0){
++
++                //Set Last Update
++                Inspection currentInspection = InspectionList.get(position);
++                String date = null;
++                try {
++                    date = DateCalculator.changeDateToString(currentInspection);
++                } catch (ParseException e) {
++                    e.printStackTrace();
++                }
++                TextView dateText = itemView.findViewById(R.id.Update);
++                dateText.setText("Updated date: " + date);
++
++                //Set Hazard Icon & text
++                ImageView hazardImageView = itemView.findViewById(R.id.Hazard_image);
++                TextView levelView = itemView.findViewById(R.id.Hazard_level);
++                if (currentInspection.getHazard().equals(Hazard.LOW)) {
++                    hazardImageView.setImageResource(R.drawable.low_hazard_icon);
++                    levelView.setText("Low");
++                    levelView.setTextColor(Color.GREEN);
++                }
++                else if(currentInspection.getHazard().equals(Hazard.MODERATE)) {
++                    hazardImageView.setImageResource(R.drawable.medium_hazard_icon);
++                    levelView.setText("Moderate");
++                    levelView.setTextColor(Color.parseColor("#FFA500")); // Orange
++                }
++                else {
++                    hazardImageView.setImageResource(R.drawable.high_hazard_icon);
++                    levelView.setText("High");
++                    levelView.setTextColor(Color.RED);
++                }
++
++                //Issues Count
++                TextView criticalIssueText = itemView.findViewById(R.id.Critical_issue);
++                TextView nonCriticalIssueText = itemView.findViewById(R.id.Non_critical_issue);
++                int counterCr = 0;
++                int counterNon = 0;
++                counterCr = currentInspection.getNumberOfCritical();
++                counterNon = currentInspection.getNumberOfNonCritical();
++                criticalIssueText.setText("Critical Issues: " + counterCr);
++                nonCriticalIssueText.setText("NOn-Critical Issues: " + counterNon);
++            }
++            else{
++                TextView issueText = itemView.findViewById(R.id.Update);
++                issueText.setText("No issues");
++            }
++
++            return itemView;
++        }
+     }
+ }
+Index: app/src/main/java/com/sfu/cmpt276groupproject/RestaurantsListActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/sfu/cmpt276groupproject/RestaurantsListActivity.java	(revision 5bcc3370c3669dcabc2108263c21fd67be89c108)
++++ app/src/main/java/com/sfu/cmpt276groupproject/RestaurantsListActivity.java	(date 1593640478113)
+@@ -47,9 +47,12 @@
+         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+             @Override
+             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+-                Intent intent = new Intent(RestaurantsListActivity.this,
++                //From Issue 2
++               /* Intent intent = new Intent(RestaurantsListActivity.this,
+                         RestaurantDetailActivity.class);
+-                intent.putExtra("targetCamera", manager.getRestaurants().get(position).toString());
++                intent.putExtra("targetRestaurant", manager.getRestaurants().get(position).toString());*/
++               //From Issue 3
++                Intent intent = RestaurantDetailActivity.makeRestaurantIntent(RestaurantsListActivity.this, position);
+                 startActivity(intent);
+             }
+         });
+Index: app/src/main/res/layout/activity_inspection.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_inspection.xml	(date 1593643853742)
++++ app/src/main/res/layout/activity_inspection.xml	(date 1593643853742)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".InspectionActivity">
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_restaurant_detail.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_restaurant_detail.xml	(revision 5bcc3370c3669dcabc2108263c21fd67be89c108)
++++ app/src/main/res/layout/activity_restaurant_detail.xml	(date 1593646226337)
+@@ -6,4 +6,45 @@
+     android:layout_height="match_parent"
+     tools:context=".RestaurantDetailActivity">
+ 
++    <TextView
++        android:id="@+id/Name"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="16dp"
++        android:layout_marginLeft="16dp"
++        android:layout_marginTop="16dp"
++        android:text="TextView"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <TextView
++        android:id="@+id/Address"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="16dp"
++        android:layout_marginLeft="16dp"
++        android:layout_marginTop="16dp"
++        android:text="TextView"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/Name" />
++
++    <TextView
++        android:id="@+id/Coords"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="16dp"
++        android:layout_marginLeft="16dp"
++        android:layout_marginTop="16dp"
++        android:text="TextView"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/Address" />
++
++    <ListView
++        android:id="@+id/Inspection_List"
++        android:layout_width="409dp"
++        android:layout_height="624dp"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/Coords" />
++
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file

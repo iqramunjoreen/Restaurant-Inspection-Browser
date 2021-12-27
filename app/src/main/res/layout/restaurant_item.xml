@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="4dp"
+    android:layout_marginStart="4dp"
+    android:paddingVertical="8dp">
+
+    <TextView
+        android:id="@+id/restaurant_name"
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_toEndOf="@+id/list_image"
+        android:layout_toRightOf="@+id/list_image"
+        android:autoSizeTextType="uniform"
+        android:text="@string/restaurant_name"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#090808"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/list_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/issue_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/restaurant_name"
+        android:layout_toEndOf="@+id/list_image"
+        android:layout_toRightOf="@+id/list_image"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="2dp"
+        android:textSize="15sp"
+        android:autoSizeTextType="uniform"/>
+
+    <ImageView
+        android:id="@+id/hazard_image"
+        android:layout_width="21dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/issue_num"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/list_image"
+        android:layout_toRightOf="@+id/list_image" />
+
+    <TextView
+        android:id="@+id/hazard_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/issue_num"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/hazard_image"
+        android:layout_toRightOf="@+id/hazard_image"
+        android:textSize="16sp"
+        android:autoSizeTextType="uniform"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hazard_level"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
+        android:autoSizeTextType="uniform"
+        android:textSize="14sp"/>
+
+    <ImageView
+        android:id="@+id/isfavorite_icon"
+        android:layout_width="56dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/list_image"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+</RelativeLayout>

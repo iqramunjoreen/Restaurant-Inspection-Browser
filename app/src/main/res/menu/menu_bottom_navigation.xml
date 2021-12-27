@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/restaurant_map"
+        android:title="@string/map"
+        android:icon="@drawable/tab_map"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/restaurant_list"
+        android:title="@string/restaurant_list"
+        android:icon="@drawable/tab_list"
+        android:enabled="true"/>
+</menu>

@@ -1,0 +1,91 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Activity name -->
+    <string name="app_name">Restaurant Inspector</string>
+    <string name="title_activity_restaurant_list">Restaurant List</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_restaurant_details">Restaurant Details</string>
+    <string name="title_activity_inspection_details">Inspection Details</string>
+
+    <!-- Welcome activity -->
+    <string name="checking_update">Checking update…</string>
+    <string name="updated_alert_title">Alert</string>
+    <string name="updated_alert_msg">New data! Do you want to update?</string>
+    <string name="updated_alert_ok">OK</string>
+    <string name="progress_dialog_msg">Loading…</string>
+    <string name="dialog_cancel">Cancel</string>
+
+    <!-- Map activity -->
+    <string name="address_map_item">Address</string>
+
+    <!-- Restaurant list activity -->
+    <string name="restaurant_name">Name</string>
+    <string name="hazard_low_text">Hazard: Low </string>
+    <string name="hazard_moderate_text">Hazard: Moderate</string>
+    <string name="hazard_high_text">Hazard: High</string>
+    <string name="hazard_no_text">No hazard</string>
+    <string name="last_inspection_issues">Issues in last inspection: %d</string>
+    <string name="updated_date">Updated date: %s</string>
+    <string name="no_issues">No issues</string>
+    <string name="days_ago"> days ago</string>
+
+    <!-- Restaurant details activity -->
+    <string name="list_of_inspections">List of Inspections:</string>
+    <string name="critical_issues">Critical Issues: %d</string>
+    <string name="non_critical_issues">Non-Critical Issues: %d</string>
+    <string name="address">Address: %s , %s</string>
+    <string name="coordinate">Latitude: %f\nLongitude: %f</string>
+    <string name="issue_notation">This restaurant has not been inspected</string>
+    <string name="inspection_date">Inspection date: %s</string>
+    <string name="favorite">Like!</string>
+    <string name="unfavorite">Unlike</string>
+
+    <!-- Search activity -->
+    <string name="search_success">Search Successfully</string>
+    <string name="no_result">No Result Found</string>
+    <string name="wrong_arguement">Wrong argument entered</string>
+    <string name="error_toast_1">ERROR: Entered number needs to be >= 0. Please enter again.</string>
+    <string name="error_toast_2">ERROR: Invalid entered number. Please enter again.</string>
+    <!-- Inspection details activity -->
+    <string name="no_violation">No Violation</string>
+    <string name="date">Date: %s</string>
+    <string name="violation">Violation: %s</string>
+    <string name="inspection_type">Inspection type: "</string>
+
+    <!-- Menu buttons -->
+    <string name="map">Map</string>
+    <string name="restaurant_list">Restaurant List</string>
+
+    <!-- Month -->
+    <string name="january">January</string>
+    <string name="february">February</string>
+    <string name="march">March</string>
+    <string name="april">April</string>
+    <string name="may">May</string>
+    <string name="june">June</string>
+    <string name="july">July</string>
+    <string name="august">August</string>
+    <string name="september">September</string>
+    <string name="october">October</string>
+    <string name="november">November</string>
+    <string name="december">December</string>
+
+
+    <!-- Undefined strings -->
+    <string name="search">Search</string>
+    <string name="ex_0_1" translatable="false">Ex: 0, 1…</string>
+    <string name="greater" translatable="false"><![CDATA[>=]]></string>
+    <string name="less" translatable="false"><![CDATA[<=]]></string>
+    <string name="search_successful">Search Successful!</string>
+    <string name="name">Name:</string>
+    <string name="hazard">Hazard:</string>
+    <string name="low">Low</string>
+    <string name="moderate">Moderate</string>
+    <string name="high">High</string>
+    <string name="the_number_of_critical_violation_within_the_last_year">The Number of Critical Violation within the last year:</string>
+    <string name="cancel" tools:ignore="ButtonCase">cancel</string>
+    <string name="searchBtn">search</string>
+    <string name="search_on_myfavourite">Search on myFavourite</string>
+    <string name="favourite_list">Favourite List:</string>
+    <string name="know_it">Know it!</string>
+
+</resources>

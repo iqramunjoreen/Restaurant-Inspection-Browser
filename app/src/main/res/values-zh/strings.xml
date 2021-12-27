@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Activity name -->
+    <string name="app_name">餐厅检查系统</string>
+    <string name="title_activity_restaurant_list">餐厅列表</string>
+    <string name="title_activity_maps">地图</string>
+    <string name="title_activity_restaurant_details">餐厅详细资料</string>
+    <string name="title_activity_inspection_details">检查报告详细资料</string>
+
+    <!-- Welcome activity -->
+    <string name="checking_update">检查更新中…</string>
+    <string name="updated_alert_title">提示</string>
+    <string name="updated_alert_msg">检查到有新数据，是否更新？</string>
+    <string name="updated_alert_ok">确定</string>
+    <string name="progress_dialog_msg">正在更新…</string>
+    <string name="dialog_cancel">取消</string>
+
+    <!-- Map activity -->
+    <string name="address_map_item">地址</string>
+
+    <!-- Restaurant list activity -->
+    <string name="restaurant_name">餐厅名字</string>
+    <string name="hazard_low_text">风险程度：低</string>
+    <string name="hazard_moderate_text">风险：中</string>
+    <string name="hazard_high_text">风险：高</string>
+    <string name="hazard_no_text">无风险等级</string>
+    <string name="last_inspection_issues">最新检查发现问题数：%d</string>
+    <string name="updated_date">最后更新时间：%s</string>
+    <string name="no_issues">无发现问题</string>
+    <string name="days_ago"> 天前</string>
+
+    <!-- Restaurant details activity -->
+    <string name="list_of_inspections">检查报告列表：</string>
+    <string name="critical_issues">严重问题数：%d</string>
+    <string name="non_critical_issues">非严重问题数：%d</string>
+    <string name="address">地址：%s , %s</string>
+    <string name="coordinate">纬度：%f\n经度：%f</string>
+    <string name="issue_notation">此餐厅无检查报告</string>
+    <string name="inspection_date">检查报告日期：%s</string>
+
+    <!-- Inspection details activity -->
+    <string name="no_violation">无违反条例</string>
+    <string name="date">日期：%s</string>
+    <string name="violation">违反条例代码：%s</string>
+    <string name="inspection_type">检查类型：</string>
+
+    <!-- Menu buttons -->
+    <string name="map">地图</string>
+    <string name="restaurant_list">餐厅列表</string>
+
+    <!-- Month -->
+    <string name="january">一月</string>
+    <string name="february">二月</string>
+    <string name="march">三月</string>
+    <string name="april">四月</string>
+    <string name="may">五月</string>
+    <string name="june">六月</string>
+    <string name="july">七月</string>
+    <string name="august">八月</string>
+    <string name="september">九月</string>
+    <string name="october">十月</string>
+    <string name="november">十一月</string>
+    <string name="december">十二月</string>
+    <string name="favorite">收藏</string>
+    <string name="unfavorite">取消收藏</string>
+    <string name="search">搜索</string>
+    <string name="search_success">搜索成功</string>
+    <string name="no_result">无相关结果</string>
+    <string name="wrong_arguement">请检查输入是否正确</string>
+    <string name="error_toast_1">请输入正整数</string>
+    <string name="error_toast_2">请输入有效数字</string>
+    <string name="search_successful">搜索成功！</string>
+    <string name="name">关键词：</string>
+    <string name="hazard">危险等级：</string>
+    <string name="low">低</string>
+    <string name="moderate">中</string>
+    <string name="high">高</string>
+    <string name="the_number_of_critical_violation_within_the_last_year">去年一年内严重问题数：</string>
+    <string name="cancel">取消</string>
+    <string name="searchBtn">搜索</string>
+    <string name="search_on_myfavourite">在收藏中查找</string>
+    <string name="favourite_list">收藏列表</string>
+    <string name="know_it">知道了</string>
+
+</resources>
